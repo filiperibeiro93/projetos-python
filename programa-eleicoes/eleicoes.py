@@ -1,3 +1,5 @@
+#programa para ler um arquivo txt com votos de uma eleição e informar o resultado.
+
 def percent(votos, tot_votos):
   return votos*100/tot_votos
 
