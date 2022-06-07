@@ -40,7 +40,7 @@ class Hotel(Resource):
   def get(self, hotel_id):
     hotel = HotelModel.find_hotel(hotel_id)
     if hotel:
-      return hotel
+      return hotel.json()
     return {'message': 'Hotel not found.'}, 404 # not found
 
   def post(self, hotel_id):
