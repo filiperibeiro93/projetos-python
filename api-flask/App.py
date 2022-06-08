@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from resources.Hotel import Hoteis, Hotel
+from resources.Usuario import UserRegister, Users, User
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
@@ -15,6 +16,9 @@ def cria_banco():
 
 api.add_resource(Hoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
+api.add_resource(Users, '/usuarios')
+api.add_resource(User, '/usuarios/<int:user_id>')
+api.add_resource(UserRegister, '/cadastro')
 
 if __name__ == '__main__':
     from sql_alchemy import banco
